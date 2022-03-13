@@ -1,0 +1,21 @@
+<app-top-bar></app-top-bar>
+<div class="category">
+  <label><span class="category-text">Category</span></label>
+  <select type="text" #userInput (input)="selectCategory(userInput.value)">
+    <option value="none">none</option>
+    <option value="accessories">accessories</option>
+    <option value="laptop">laptop</option>
+    <option value="headphones">headphones</option>
+    <option value="charger">charger</option>
+  </select>
+</div>
+<h1 class="products">Products</h1>
+<div class="container">
+  <app-product-list [category]="category"></app-product-list>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
