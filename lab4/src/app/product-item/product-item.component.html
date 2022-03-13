@@ -1,0 +1,30 @@
+<div class="product">
+    <h3>
+      <a [title]="{{product.name}} + ' details'" [href]="{{product.url}}">
+        {{product.name}}
+      </a>
+    </h3>
+    <h3 class="rating">
+      <progress max="5" value="{{ product.rating }}"></progress>
+    </h3>
+    <h3>
+      price: <span class='price'>{{ product.price }}$</span>
+    </h3>
+    <div class="img">
+      <img [src]="product.img">
+    </div>
+    <div class="description">
+      <p *ngIf="product.description">
+        {{ product.description }}
+      </p>
+    </div>
+    <a [href]="'https://telegram.me/share/url?url=' + product.url" target="_blank">
+      <button type="button" (click)="share()">
+        Share
+      </button>
+    </a>
+    <app-product-alerts
+      [product]="product"
+      (notify)="onNotify()">
+    </app-product-alerts>
+  </div>

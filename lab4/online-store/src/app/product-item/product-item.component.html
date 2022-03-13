@@ -1,0 +1,46 @@
+<div class="product" *ngIf="product">
+  <h3>
+    <a [title]="product.name + ' details'" [href]="product.url">
+      {{product.name}}
+    </a>
+  </h3>
+  <h3 class="rating">
+    <progress max="5" value="{{product.rating}}"></progress>
+    {{product.rating}} / 5.0
+  </h3>
+  <h3>
+    Price: <span class='price'>{{product.price}}$</span>
+  </h3>
+  <div class="img">
+    <img [src]="product.img">
+  </div>
+  <div class="description">
+    <p *ngIf="product.description">
+      {{ product.description }}
+    </p>
+  </div>
+  <div class="social">
+    Share:
+    <a [href]="'https://telegram.me/share/url?url=' + product.url" target="_blank">
+      <img class="social-media" src="https://play-lh.googleusercontent.com/ZU9cSsyIJZo6Oy7HTHiEPwZg0m2Crep-d5ZrfajqtsH-qgUXSqKpNA2FpPDTn-7qA5Q">
+    </a>
+    <a [href]="'https://wa.me/?text=' + product.url" target="_blank">
+      <img class="social-media" src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+    </a>
+    <a [href]="'https://twitter.com/intent/tweet?text=' + product.url" target="_blank">
+      <img class="social-media" src="https://cdn-icons-png.flaticon.com/512/1384/1384065.png">
+    </a>
+    <a [href]="'https://www.facebook.com/sharer/sharer.php?u=blog.shahednasser.com&quote' + product.url" target="_blank">
+      <img class="social-media" src="https://cdn-icons-png.flaticon.com/512/124/124010.png">
+    </a>
+    <a [href]="'https://mail.google.com/mail/u/0/?view=cm&to&su=ShareLink&body=' + product.url" target="_blank">
+      <img class="social-media" src="https://logosvector.net/wp-content/uploads/2015/09/google-mail-logo.png">
+    </a>
+  </div>
+  <app-product-alerts
+    [product]="product"
+    (notify)="onNotify()"
+    (buy)="onBuy()">
+  </app-product-alerts>
+
+</div>
