@@ -1,12 +1,12 @@
 /* Global Styles */
 
+h3 {
+  color: rgb(56, 49, 49);
+}
+
 .products {
   display: flex;
   justify-content: center;
-}
-
-h3 {
-  color: rgb(56, 49, 49);
 }
 
 .price {
