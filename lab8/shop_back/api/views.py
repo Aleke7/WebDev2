@@ -28,9 +28,9 @@ def category_detail(request, category_id):
         return JsonResponse({'message': str(e)}, status=400)
     return JsonResponse(category.toJSON(), safe=True)
 
-def product_of_category(request, categoryId):
+def product_of_category(request, category_id):
     try:
-        products = Product.objects.filter(category_id = categoryId)
+        products = Product.objects.filter(category_id = category_id)
         products_json = [product.toJSON() for product in products]
     except Product.DoesNotExist as e:
         return JsonResponse({'message': str(e)}, status=400)
