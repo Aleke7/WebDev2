@@ -34,6 +34,10 @@ export class ProductItemComponent {
       this.product.like++;
       this.liked = true;
     }
+    else{
+      this.product.like--;
+      this.liked = false;
+    }
   }
 
   delete(){
