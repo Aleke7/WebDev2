@@ -1,0 +1,11 @@
+<ul *ngIf="parent_company===vacancies[0].company">
+  <li *ngFor="let vacancy of vacancies">
+    <p>
+      id: {{vacancy.id}} <br>
+      name: {{vacancy.name}} <br>
+      description: {{vacancy.description}} <br>
+      salary: {{vacancy.salary}} <br>
+      company: {{vacancy.company}} <br>
+    </p>
+  </li>
+</ul>

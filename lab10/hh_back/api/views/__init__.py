@@ -1,0 +1,2 @@
+from .views_generic import CompanyListAPIView, CompanyDetailAPIView, VacancyListAPIView, VacancyDetailAPIView
+from .views_fbv import company_vacancy_list, vacancy_top_ten
